@@ -31,6 +31,7 @@ class LinkedList:
         self.tail.next = Node(value)
         self.tail=self.tail.next
 
+# Declare a SET and put all items of list 1 and 2 to this one. Set will remove duplicate items
 def union(llist_1, llist_2):
     unique= set(())
 
@@ -49,6 +50,10 @@ def union(llist_1, llist_2):
         out.append(item)
     return out
 
+#Use a Dictionary to keep all items of list 1,
+#Then check items of list 2 are belong to this dictionary of not.
+#If yes, we put it to new list and remove it out from dictionary (because list 2 can have duplicate items)
+#Then return new linked list
 def intersection(llist_1, llist_2):
     out = LinkedList()  
     items ={}
