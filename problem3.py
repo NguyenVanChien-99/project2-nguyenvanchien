@@ -87,10 +87,14 @@ def huffman_decoding(data,tree):
     #If the tree has only 1 node , that mean we have only one character in the message 
     #This character is saved as 0 before(binary code)
     if tree.left is None and tree.right is None:
-        if data=="0":
-            return tree.char
-        print("Invalid encoded data")
-        return ""
+        out =""
+        for char in data:
+            if char=="0":
+                out+=tree.char
+            else:
+                print("Invalid encoded data")
+                return ""
+        return out
 
     #Decode
     decoded_data=""
@@ -142,24 +146,33 @@ if __name__ == "__main__":
 # Test Case 1
 encoded1,head1= huffman_encoding("AAAAAAABBBCCCCCCCDDEEEEEE")
 if encoded1!="1010101010101000100100111111111111111000000010101010101":
-    print("Test case 1 : encode failed")
+    raise SystemExit("Test case 1 : encode failed")
 decoded1= huffman_decoding(encoded1,head1)
 if decoded1!="AAAAAAABBBCCCCCCCDDEEEEEE":
-    print("Test case 1 : decode failed")
+    raise SystemExit("Test case 1 : decode failed")
 print("Test case 1 pass")
 # Test Case 2
 encoded1,head1= huffman_encoding("A")
 if encoded1!="0":
-    print("Test case 2 : encode failed")
+    raise SystemExit("Test case 2 : encode failed")
 decoded1= huffman_decoding(encoded1,head1)
 if decoded1!="A":
-    print("Test case 2 : decode failed")
+    raise SystemExit("Test case 2 : decode failed")
 print("Test case 2 pass")
 # Test Case 3
 encoded1,head1= huffman_encoding("")
 if encoded1!="":
-    print("Test case 3 : encode failed")
+    raise SystemExit("Test case 3 : encode failed")
 decoded1= huffman_decoding(encoded1,head1)
 if decoded1!="":
-    print("Test case 3 : decode failed")
+    raise SystemExit("Test case 3 : decode failed")
 print("Test case 3 pass")
+
+# Test Case 4- same character repeated multiple
+encoded1,head1= huffman_encoding("AAAAAAA")
+if encoded1!="0000000":
+    raise SystemExit("Test case 4 : encode failed")
+decoded1= huffman_decoding(encoded1,head1)
+if decoded1!="AAAAAAA":
+    raise SystemExit("Test case 4 : decode failed")
+print("Test case 4 pass")

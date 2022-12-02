@@ -24,6 +24,9 @@ def find_files(suffix, path):
     """
     if suffix is None or suffix =="" or path is None or path =="" or len(suffix)>= len(path):
         return []
+    if not os.path.exists(path):
+        print("Invalid path")
+        return []
     out = []
     if os.path.isfile(path) and path[len(path)-len(suffix):len(path)]==suffix:
         return [path]
@@ -44,8 +47,7 @@ if find_files(".c", "./prob2")==['./prob2/subdir1/a.c', './prob2/subdir3/subsubd
     print("Test case 1 passed")
 else:
     print("Test case 1 failed")
-# Test Case 2
-# not found
+# Test Case 2 No files found
 if find_files(".abcxyz", "./prob2")==[]:
     print("Test case 2 passed")
 else:
@@ -55,3 +57,9 @@ if find_files("", None)==[]:
     print("Test case 3 passed")
 else:
     print("Test case 3 failed")
+
+# Test Case 4 invalid path
+if find_files("aaa", "/dahb/Mda??")==[]:
+    print("Test case 4 passed")
+else:
+    print("Test case 4 failed")

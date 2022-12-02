@@ -60,10 +60,10 @@ child.add_user("User 1")
 child.add_user("User 2")
 parent.add_group(child)
 if not is_user_in_group(sub_child_user,parent):
-    print("Test case 1 failed")
+    raise SystemExit("Test case 1 failed")
 print("Test case 1 passed")
 
-# Test Case 2 - Not found
+# Test Case 2 - Not found in group
 parent2 = Group("parent")
 child2 = Group("child")
 sub_child2 = Group("subchild")
@@ -75,11 +75,18 @@ child2.add_group(sub_child2)
 parent2.add_group(child2)
 
 if is_user_in_group("ABCXYZ",parent2):
-    print("Test case 2 failed")
+    raise SystemExit("Test case 2 failed")
 print("Test case 2 passed")
 
-# Test Case 3 - None
+# Test Case 3 - Input None
 
 if is_user_in_group("ABCXYZ",None):
-    print("Test case 2 failed")
-print("Test case 2 passed")
+    raise SystemExit("Test case 3 failed")
+print("Test case 3 passed")
+
+# Test Case 4 - Empty group
+parent4 = Group("parent")
+
+if is_user_in_group("parent",parent4):
+    raise SystemExit("Test case 4 failed")
+print("Test case 4 passed")

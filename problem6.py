@@ -164,3 +164,18 @@ intersection3=intersection(linked_list_5,linked_list_6)
 if not check_same_items(intersection3.to_list() , [3, 2, 4, 35, 21, 1]):
     raise SystemExit('Test intersection1 3 failed, actual {}'.format(intersection3.to_list()))
 print("Test case 3 passed")
+
+
+# Test Case 4- Both sets are empty. 
+linked_list_7 = LinkedList()
+linked_list_8 = LinkedList()
+
+
+union4 = union(linked_list_7,linked_list_8)
+if not check_same_items(union4.to_list() , []):
+    raise SystemExit('Test union 4 failed, actual {}'.format(union4.to_list()))
+
+intersection4=intersection(linked_list_8,linked_list_8)
+if not check_same_items(intersection4.to_list() , []):
+    raise SystemExit('Test intersection1 4 failed, actual {}'.format(intersection4.to_list()))
+print("Test case 4 passed")

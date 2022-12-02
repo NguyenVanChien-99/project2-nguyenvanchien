@@ -23,6 +23,7 @@ class LRU_Cache(object):
 
     def set(self, key, value):
         if key is None or value is None:
+            print("Invalid input")
             return
         if len(self.cache)>=self.capacity:
             del self.cache[self.use[0]]
@@ -47,7 +48,7 @@ our_cache.get(9)      # returns -1 because 9 is not present in the cache
 our_cache.set(5, 5) 
 our_cache.set(6, 6)
 
-our_cache.get(3)      # returns -1 because the cache reached it's capacity and 3 was the least recently used entry
+our_cache.get(3)      
 
 # Add your own test cases: include at least three test cases
 # and two of them must include edge cases, such as null, empty or very large values
@@ -69,3 +70,23 @@ our_cache.set(-100,-100)
 if our_cache.get(-100) !=-100:
     print("Test Case 3 Failed")
 print("Test Case 3 pass")
+
+# Test case 4: Getting the same value over and over again to see if the program works
+if our_cache.get(6) !=6:
+    print("Test Case 4 Failed")
+if our_cache.get(6) !=6:
+    print("Test Case 4 Failed")
+if our_cache.get(6) !=6:
+    print("Test Case 4 Failed")
+print("Test Case 4 pass")
+
+# Test case 5: Getting only invalid values
+
+if our_cache.get(None) !=-1:
+    print("Test Case 5 Failed")
+print("Test Case 5 pass")
+
+# Test case 6: Adding case where the input is NULL
+if our_cache.get(None) !=-1:
+    print("Test Case 5 Failed")
+print("Test Case 5 pass")

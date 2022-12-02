@@ -30,6 +30,10 @@ class BlockChain:
         self.tail=None
     
     def add_data(self,data):
+        if data is None or data =="":
+            print("Invalid input")
+            return
+
         #Set block is head if the chain is empty
         if self.head is None:
             self.head= Block(datetime.now(),data,"")
@@ -85,6 +89,11 @@ block2.head.next.data="aaaa"
 block2.print()
 block2.check_valid()
 print("========================================")
-# Test Case 3
+# Test Case 3 empty chain
 block3 = BlockChain()
 block3.print()
+
+# Test case 4 add empty block
+block4 = BlockChain()
+block4.add_data(None)
+block4.print()
