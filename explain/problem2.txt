@@ -1,0 +1,8 @@
+### Explain:
+# Check the path is a file with suffix equal to the suffix we put then return this path
+# If the path is a file with suffix not equal to the suffix we put then we return an empty list
+# If the path is a dir , we get all sub dirs and use recursion to check sub dir find_files(suffix, sub_dir_path)
+
+
+Big O : O(n)
+Because we need to check every files in every sub folders of the path

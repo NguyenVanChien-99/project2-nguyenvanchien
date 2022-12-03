@@ -1,0 +1,15 @@
+Union
+
+I use SET and put all items of list 1 and 2 to this one because Set will remove all duplicate items
+and then put the items of set back to our new linked list and return.
+big O : O(max(length of list 1,lenght of list 2))
+
+
+intersection
+
+#Use a Dictionary to keep all items of list 1,
+#Then check items of list 2 are belong to this dictionary of not.
+#If yes, we put it to new list and remove it out from dictionary (because list 2 can have duplicate items)
+#Then return new linked list
+
+big O : O(max(length of list 1,lenght of list 2))

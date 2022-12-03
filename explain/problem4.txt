@@ -1,0 +1,4 @@
+Best case: Found :first user  in the root group: o(1)
+worst case : not found: O(n)
+
+=> O(n)

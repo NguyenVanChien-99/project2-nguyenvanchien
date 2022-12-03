@@ -1,0 +1,10 @@
+Need to use heap (priority queue), because when we get 2 items from heap and put 1 new item back . We need to make sure every items are sorted.
+
+Assume that method heappop/heappush have big O: O(1)
+Big O of function:
+generate_frequency_dic (line 74): O(n)
+generate_code_from_tree (line 45): O(n)
+
+huffman_encoding: worst case (all characters are different): O(n)+O(n)+O(n)=>O(n)
+
+huffman_decoding: O(n)

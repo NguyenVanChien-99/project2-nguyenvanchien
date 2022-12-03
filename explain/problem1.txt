@@ -1,0 +1,6 @@
+I choose array to track what is the least recently used , not stack or queue because it's easy to change the position of the item when it used.
+And use dictionary to keep items because it's easy for lookup as a key-value
+
+Assume that method : remove/append/pop of array have big O : O(1)
+=> get : worst case : O(4) => O(1)
+=> set : worst case : O(6) => O(1)

@@ -1,0 +1,3 @@
+i use self.tail variable to keep the last block of the chain 
+So add new block, just add it to the tail (no need to go through every item) and move the tail to next
+Big O off add_data function : O(1)
